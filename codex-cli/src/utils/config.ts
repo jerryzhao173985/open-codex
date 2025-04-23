@@ -117,7 +117,7 @@ function defaultModelsForProvider(provider: string): {
     case "gemini":
       return {
         agentic: "gemini-2.5-pro-preview-03-25",
-        fullContext: "gemini-2.0-flash",
+        fullContext: "gemini-2.5-flash-preview-04-17",
       };
     case "openrouter":
       return {
