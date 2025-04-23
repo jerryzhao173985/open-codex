@@ -33,7 +33,7 @@ export const INSTRUCTIONS_FILEPATH = join(CONFIG_DIR, "instructions.md");
 export const OPENAI_TIMEOUT_MS =
   parseInt(process.env["OPENAI_TIMEOUT_MS"] || "0", 10) || undefined;
 
-export let DEFAULT_PROVIDER = "openai";
+export let DEFAULT_PROVIDER = "ollama";
 export let API_KEY = "";
 
 // Gracefully fallback to a provider if we have a missing API key.
