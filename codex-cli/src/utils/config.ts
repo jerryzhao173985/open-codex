@@ -39,7 +39,7 @@ export let API_KEY = "";
 // Gracefully fallback to a provider if we have a missing API key.
 if (!process.env["OPENAI_API_KEY"]) {
   if (process.env["GOOGLE_GENERATIVE_AI_API_KEY"]) {
-    DEFAULT_PROVIDER = "gemini";
+    DEFAULT_PROVIDER = "ollama";
   } else if (process.env["OPENROUTER_API_KEY"]) {
     DEFAULT_PROVIDER = "openrouter";
   } else if (process.env["XAI_API_KEY"]) {
@@ -126,8 +126,13 @@ function defaultModelsForProvider(provider: string): {
       };
     case "xai":
       return {
-        agentic: "grok-3-mini-beta",
+        agentic: "grok-3-beta",
         fullContext: "grok-3-beta",
+      };
+    case "ollama":
+      return {
+        agentic: "mix_77/gemma3-qat-tools:27b",
+        fullContext: "gemma3:27b-it-qat",
       };
     default:
       return {
